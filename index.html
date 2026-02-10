@@ -4,34 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Midnight Detail | Premium Mobile Detailing Broward County</title>
-    <meta name="description" content="High-end mobile auto detailing in Broward County. Professional two-person team specializing in maintenance, restoration, and ceramic coatings.">
+    <meta name="description" content="High-end mobile auto detailing in Broward County. Professional two-person team.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "AutoBodyShop",
-      "name": "Midnight Detail",
-      "image": "https://midnightdetail.com/logo.png",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Fort Lauderdale",
-        "addressRegion": "FL",
-        "addressCountry": "US"
-      },
-      "description": "Professional two-person mobile detailing team serving Broward County.",
-      "priceRange": "$95-$500"
-    }
-    </script>
-
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #0a0a0a; color: #f4f4f4; }
         .glow-purple { box-shadow: 0 0 20px rgba(168, 85, 247, 0.15); }
         .accent-gradient { background: linear-gradient(135deg, #a855f7 0%, #6366f1 100%); }
         .glass-card { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); backdrop-filter: blur(10px); }
         html { scroll-behavior: smooth; }
+        select option { background: #1a1a1a; color: white; }
     </style>
 </head>
 <body class="antialiased">
@@ -39,13 +23,11 @@
     <nav class="fixed top-0 w-full z-50 glass-card border-b border-white/10 px-6 py-4 flex justify-between items-center">
         <div class="text-xl font-bold tracking-tighter text-white">MIDNIGHT<span class="text-purple-500 underline decoration-2 underline-offset-4">DETAIL</span></div>
         <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-400">
-            <a href="#results" class="hover:text-purple-400 transition">Results</a>
             <a href="#packages" class="hover:text-purple-400 transition">Packages</a>
-            <a href="#addons" class="hover:text-purple-400 transition">Add-Ons</a>
-            <a href="#contact" class="hover:text-purple-400 transition">Contact</a>
+            <a href="#contact" class="hover:text-purple-400 transition">Book Now</a>
         </div>
-        <a href="tel:5551234567" class="accent-gradient px-5 py-2 rounded-full text-sm font-bold flex items-center gap-2">
-            <i data-lucide="phone" class="w-4 h-4"></i> book an appointment
+        <a href="#contact" class="accent-gradient px-5 py-2 rounded-full text-sm font-bold flex items-center gap-2">
+            <i data-lucide="calendar"></i> BOOK NOW
         </a>
     </nav>
 
@@ -60,185 +42,80 @@
             </p>
             <div class="flex flex-col md:flex-row gap-4 justify-center">
                 <a href="#packages" class="accent-gradient px-10 py-4 rounded-xl font-bold text-lg hover:scale-105 transition-transform">View Packages</a>
-                <a href="#contact" class="bg-white/10 border border-white/20 px-10 py-4 rounded-xl font-bold text-lg hover:bg-white/20 transition">Book Inspection</a>
+                <a href="#contact" class="bg-white/10 border border-white/20 px-10 py-4 rounded-xl font-bold text-lg hover:bg-white/20 transition">Inquire Now</a>
             </div>
         </div>
     </section>
 
-    <section id="results" class="py-24 px-6 bg-[#0c0c0c]">
+    <section id="packages" class="py-24 px-6">
         <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold mb-4">The Midnight Standard</h2>
-                <div class="w-20 h-1 accent-gradient mx-auto"></div>
-            </div>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="rounded-2xl overflow-hidden glass-card">
-                    <img src=>
-                    <div class="p-6">
-                        <h3 class="font-bold text-xl mb-2">Ceramic Coating Results</h3>
-                        <p class="text-gray-400">Deep gloss and hydrophobic protection that lasts months, not weeks.</p>
-                    </div>
+            <h2 class="text-4xl font-bold text-center mb-16">Elite Packages</h2>
+            <div class="grid md:grid-cols-2 gap-8 items-start max-w-4xl mx-auto">
+
+                <div class="glass-card p-8 rounded-3xl">
+                    <h3 class="text-xl font-bold mb-2">Maintenance Clean</h3>
+                    <div class="text-3xl font-bold text-purple-400 mb-4">$95+</div>
+                    <ul class="space-y-3 text-sm mb-8 text-gray-400">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-500"></i> Hand wash & foam bath</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-500"></i> Wheel & tire cleaning</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-500"></i> Interior vacuum & dash wipe</li>
+                    </ul>
+                    <a href="#contact" class="block text-center border border-white/20 py-3 rounded-xl hover:bg-white/5 transition">Select</a>
                 </div>
-                <div class="rounded-2xl overflow-hidden glass-card">
-                    <img src=>
-                    <div class="p-6">
-                        <h3 class="font-bold text-xl mb-2">Interior Restoration</h3>
-                        <p class="text-gray-400">From daily driver to factory fresh. No crevice left untouched.</p>
-                    </div>
+
+                <div class="glass-card p-8 rounded-3xl ring-2 ring-purple-500 glow-purple bg-white/[0.05] relative">
+                    <div class="absolute -top-3 right-6 bg-purple-500 text-white text-[10px] px-4 py-1 rounded-full uppercase font-bold">Best Value</div>
+                    <h3 class="text-xl font-bold mb-2">Enhanced Detail</h3>
+                    <div class="text-3xl font-bold text-purple-400 mb-4">$150+</div>
+                    <ul class="space-y-3 text-sm mb-6 text-gray-400">
+                        <li class="flex items-center gap-2 text-white font-medium"><i data-lucide="star" class="w-4 h-4 text-purple-500"></i> Everything in Maintenance</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-500"></i> Spray wax sealant</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-500"></i> UV interior protection</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-500"></i> Door jamb cleaning</li>
+                    </ul>
+                    <a href="#contact" class="block text-center accent-gradient py-3 rounded-xl font-bold hover:scale-[1.02] transition">Book Most Popular</a>
                 </div>
             </div>
         </div>
     </section>
 
-<section id="packages" class="py-24 px-6">
-  <div class="max-w-6xl mx-auto">
-    <h2 class="text-4xl font-bold text-center mb-16">Elite Packages</h2>
+    <section id="contact" class="py-24 px-6 bg-[#0c0c0c]">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4">Secure Your Slot</h2>
+                <p class="text-gray-400">Serving all of Broward County. We'll contact you to confirm.</p>
+            </div>
 
-    <div class="grid md:grid-cols-3 gap-8 items-start">
-
-      <!-- STANDARD -->
-      <div class="glass-card p-8 rounded-3xl">
-        <h3 class="text-xl font-bold mb-2">maitnece clean/h3>
-        <div class="text-3xl font-bold text-purple-400 mb-4">
-          $ <span class="text-sm text-gray-500">Starting at</span>
-        </div>
-        <ul class="space-y-3 text-sm mb-8">
-          <li>Hand wash & foam bath</li>
-          <li>Wheel & tire cleaning</li>
-          <li>Interior vacuum</li>
-          <li>Dash wipe down</li>
-        </ul>
-        <a href="#contact" class="block text-center border border-white/20 py-3 rounded-xl">Select</a>
-      </div>
-
-      <!-- ENHANCED -->
-      <div class="glass-card p-8 rounded-3xl ring-2 ring-purple-500 glow-purple bg-white/[0.05]">
-        <div class="absolute top-0 right-0 bg-purple-500 text-white text-[10px] px-4 py-1 rounded-bl-xl uppercase">
-          Best Value
-        </div>
-
-        <h3 class="text-xl font-bold mb-2">Enhanced Detail</h3>
-        <div class="text-3xl font-bold text-purple-400 mb-4">
-          $ <span class="text-sm text-gray-500">Starting at</span>
-        </div>
-
-        <ul class="space-y-3 text-sm mb-6">
-          <li><b>Everything in Standard</b></li>
-          <li>Spray wax sealant</li>
-          <li>UV interior protection</li>
-          <li>Door jamb cleaning</li>
-        </ul>
-
-        <!-- VEHICLE SIZE PRICING (SAFE) -->
-        <div class="bg-white/5 rounded-2xl p-4 border border-white/10 text-center mb-8">
-          <h4 class="font-bold mb-3 text-sm">Vehicle Size Pricing</h4>
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
-            <div><span class="text-gray-400 block">Sedan</span>Base</div>
-            <div><span class="text-gray-400 block">Small SUV</span>+$25–$40</div>
-            <div><span class="text-gray-400 block">Large SUV / Truck</span>+$50–$75</div>
-          </div>
-        </div>
-
-        <a href="#contact" class="block text-center accent-gradient py-3 rounded-xl font-bold">
-          Book Most Popular
-        </a>
-      </div>
-
-      <!-- SHOWROOM -->
-      <!--<div class="glass-card p-8 rounded-3xl">
-        <h3 class="text-xl font-bold mb-2">Showroom Finish</h3>
-        <div class="text-3xl font-bold text-purple-400 mb-4">
-          $ <span class="text-sm text-gray-500">Starting at</span>
-        </div>
-        <ul class="space-y-3 text-sm mb-8">
-          <li>Paint decontamination</li>
-          <li>Machine correction</li>
-          <li>Ceramic protection</li>
-          <li>Leather conditioning</li>
-        </ul>
-        <a href="#contact" class="block text-center border border-white/20 py-3 rounded-xl">
-          Inquire
-        </a>
-      </div>-->
-
-    </div>
-  </div>
-</section>
-
-<section id="contact" class="py-24 px-6 bg-[#0a0a0a]">
-    <div class="max-w-4xl mx-auto">
-        <div class="text-center mb-12">
-            <h2 class="text-4xl font-bold mb-4">Book Your Service</h2>
-            <p class="text-gray-400">Fill out the form below and we'll reach out to confirm your time slot.</p>
-        </div>
-
-        <div class="glass-card p-8 md:p-12 rounded-3xl glow-purple">
-            <form action="mailto:your-email@example.com" method="post" enctype="text-plain" class="grid md:grid-cols-2 gap-6">
-                <div class="flex flex-col gap-2">
-                    <label class="text-sm font-semibold text-gray-400 ml-1">Full Name</label>
-                    <input type="text" name="name" placeholder="John Doe" required 
-                        class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-purple-500 transition">
-                </div>
-
-                <div class="flex flex-col gap-2">
-                    <label class="text-sm font-semibold text-gray-400 ml-1">Phone Number</label>
-                    <input type="tel" name="phone" placeholder="(954) 555-0123" required 
-                        class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-purple-500 transition">
-                </div>
-
-                <div class="flex flex-col gap-2 md:col-span-2">
-                    <label class="text-sm font-semibold text-gray-400 ml-1">Vehicle Year, Make, & Model</label>
-                    <input type="text" name="vehicle" placeholder="2023 Porsche 911" required 
-                        class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-purple-500 transition">
-                </div>
-
-                <div class="flex flex-col gap-2 md:col-span-2">
-                    <label class="text-sm font-semibold text-gray-400 ml-1">Desired Package</label>
-                    <select name="package" class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-purple-500 transition appearance-none text-gray-300">
-                        <option class="bg-[#1a1a1a]">Maintenance Clean</option>
-                        <option class="bg-[#1a1a1a]">Enhanced Detail</option>
-                        <option class="bg-[#1a1a1a]">Ceramic Coating / Other</option>
+            <div class="glass-card p-8 rounded-3xl">
+                <form action="mailto:your-email@example.com" method="post" enctype="text/plain" class="grid grid-cols-1 gap-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <input type="text" name="name" placeholder="Name" required class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:border-purple-500 outline-none transition">
+                        <input type="tel" name="phone" placeholder="Phone Number" required class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:border-purple-500 outline-none transition">
+                    </div>
+                    <input type="text" name="vehicle" placeholder="Vehicle Year, Make, & Model" required class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:border-purple-500 outline-none transition">
+                    <select name="package" class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:border-purple-500 outline-none transition text-gray-400">
+                        <option>Maintenance Clean</option>
+                        <option>Enhanced Detail</option>
+                        <option>Ceramic Coating / Other</option>
                     </select>
-                </div>
-
-                <div class="flex flex-col gap-2 md:col-span-2">
-                    <label class="text-sm font-semibold text-gray-400 ml-1">Location or Special Requests</label>
-                    <textarea name="message" rows="4" placeholder="Any specific concerns or your address in Broward?" 
-                        class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-purple-500 transition"></textarea>
-                </div>
-
-                <div class="md:col-span-2 mt-4">
-                    <button type="submit" class="accent-gradient w-full py-4 rounded-xl font-bold text-lg hover:scale-[1.02] transition-transform flex justify-center items-center gap-2">
-                        <i data-lucide="send" class="w-5 h-5"></i> Send Booking Request
-                    </button>
-                </div>
-            </form>
+                    <textarea name="notes" rows="3" placeholder="Location or special requests?" class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:border-purple-500 outline-none transition"></textarea>
+                    <button type="submit" class="accent-gradient py-4 rounded-xl font-bold text-lg hover:scale-[1.01] transition-transform">Send Booking Request</button>
+                </form>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <footer class="py-12 px-6 border-t border-white/10 text-center">
-        <div class="mb-8 font-bold tracking-tighter">MIDNIGHT DETAIL</div>
-        <p class="text-xs text-gray-500 max-w-md mx-auto mb-6">
-            Serving Fort Lauderdale, Hollywood, Pembroke Pines, Plantation, Davie, and all of Broward County.
-        </p>
-        <div class="flex justify-center gap-6 text-gray-400 mb-8">
-            <a href="#" class="hover:text-purple-500 transition"><i data-lucide="instagram"></i></a>
-            <a href="#" class="hover:text-purple-500 transition"><i data-lucide="facebook"></i></a>
-        </div>
-        <div class="text-[10px] text-gray-600 uppercase tracking-widest">&copy; 2026 Midnight Detail. All Rights Reserved.</div>
+        <div class="mb-4 font-bold tracking-tighter">MIDNIGHT DETAIL</div>
+        <div class="text-[10px] text-gray-600 uppercase tracking-widest">&copy; 2026 Midnight Detail.</div>
     </footer>
 
     <div class="md:hidden fixed bottom-6 left-6 right-6 z-50">
-        <a href="tel:5551234567" class="accent-gradient w-full h-16 rounded-2xl flex items-center justify-center gap-3 font-bold shadow-2xl">
-            <i data-lucide="phone-call"></i> TAP TO CALL
+        <a href="#contact" class="accent-gradient w-full h-16 rounded-2xl flex items-center justify-center gap-3 font-bold shadow-2xl">
+            <i data-lucide="calendar-check"></i> BOOK AN APPOINTMENT
         </a>
     </div>
 
-    <script>
-        lucide.createIcons();
-    </script>
+    <script>lucide.createIcons();</script>
 </body>
-
 </html>
-
