@@ -165,7 +165,57 @@
   </div>
 </section>
 
+<section id="contact" class="py-24 px-6 bg-[#0a0a0a]">
+    <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold mb-4">Book Your Service</h2>
+            <p class="text-gray-400">Fill out the form below and we'll reach out to confirm your time slot.</p>
+        </div>
 
+        <div class="glass-card p-8 md:p-12 rounded-3xl glow-purple">
+            <form action="mailto:your-email@example.com" method="post" enctype="text-plain" class="grid md:grid-cols-2 gap-6">
+                <div class="flex flex-col gap-2">
+                    <label class="text-sm font-semibold text-gray-400 ml-1">Full Name</label>
+                    <input type="text" name="name" placeholder="John Doe" required 
+                        class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-purple-500 transition">
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <label class="text-sm font-semibold text-gray-400 ml-1">Phone Number</label>
+                    <input type="tel" name="phone" placeholder="(954) 555-0123" required 
+                        class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-purple-500 transition">
+                </div>
+
+                <div class="flex flex-col gap-2 md:col-span-2">
+                    <label class="text-sm font-semibold text-gray-400 ml-1">Vehicle Year, Make, & Model</label>
+                    <input type="text" name="vehicle" placeholder="2023 Porsche 911" required 
+                        class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-purple-500 transition">
+                </div>
+
+                <div class="flex flex-col gap-2 md:col-span-2">
+                    <label class="text-sm font-semibold text-gray-400 ml-1">Desired Package</label>
+                    <select name="package" class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-purple-500 transition appearance-none text-gray-300">
+                        <option class="bg-[#1a1a1a]">Maintenance Clean</option>
+                        <option class="bg-[#1a1a1a]">Enhanced Detail</option>
+                        <option class="bg-[#1a1a1a]">Ceramic Coating / Other</option>
+                    </select>
+                </div>
+
+                <div class="flex flex-col gap-2 md:col-span-2">
+                    <label class="text-sm font-semibold text-gray-400 ml-1">Location or Special Requests</label>
+                    <textarea name="message" rows="4" placeholder="Any specific concerns or your address in Broward?" 
+                        class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-purple-500 transition"></textarea>
+                </div>
+
+                <div class="md:col-span-2 mt-4">
+                    <button type="submit" class="accent-gradient w-full py-4 rounded-xl font-bold text-lg hover:scale-[1.02] transition-transform flex justify-center items-center gap-2">
+                        <i data-lucide="send" class="w-5 h-5"></i> Send Booking Request
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
 
     <footer class="py-12 px-6 border-t border-white/10 text-center">
         <div class="mb-8 font-bold tracking-tighter">MIDNIGHT DETAIL</div>
@@ -191,3 +241,4 @@
 </body>
 
 </html>
+
