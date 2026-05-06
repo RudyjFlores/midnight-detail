@@ -1,210 +1,425 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Midnight Detail | Premium Mobile Detailing Broward County</title>
-    <meta name="description" content="High-end mobile auto detailing in Broward County. Professional two-person team. Book your transformation online.">
+    <title>Midnight Detail | Mobile Auto Detailing Broward County</title>
+    <meta name="description" content="Mobile auto detailing in Fort Lauderdale, Hollywood & Broward County — professional two-person team, book online in 60 seconds.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
-    
-    <style>
-        body { font-family: 'Inter', sans-serif; background-color: #0a0a0a; color: #f4f4f4; }
-        .glow-purple { box-shadow: 0 0 20px rgba(168, 85, 247, 0.15); }
-        .accent-gradient { background: linear-gradient(135deg, #a855f7 0%, #6366f1 100%); }
-        .glass-card { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); backdrop-filter: blur(10px); }
-        html { scroll-behavior: smooth; }
-        .calendly-inline-widget { min-width: 320px; height: 700px; border-radius: 1.5rem; overflow: hidden; }
 
-        /* Hero background — pure CSS, no image dependency */
-        .hero-bg {
-            background:
-                radial-gradient(ellipse 80% 60% at 50% 40%, rgba(168, 85, 247, 0.12) 0%, transparent 70%),
-                radial-gradient(ellipse 40% 40% at 20% 80%, rgba(99, 102, 241, 0.08) 0%, transparent 60%),
-                #0a0a0a;
-        }
+```
+<style>
+    body { font-family: 'Inter', sans-serif; background-color: #0a0a0a; color: #f4f4f4; }
+    .glow-purple { box-shadow: 0 0 20px rgba(168, 85, 247, 0.15); }
+    .accent-gradient { background: linear-gradient(135deg, #a855f7 0%, #6366f1 100%); }
+    .glass-card { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); backdrop-filter: blur(10px); }
+    html { scroll-behavior: smooth; }
+    .calendly-inline-widget { min-width: 320px; height: 700px; border-radius: 1.5rem; overflow: hidden; }
 
-        /* Results placeholder cards */
-        .result-placeholder {
-            width: 100%;
-            height: 240px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            gap: 12px;
-            background: rgba(168, 85, 247, 0.04);
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-        }
-        .result-placeholder svg {
-            opacity: 0.2;
-        }
-        .result-placeholder span {
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            color: rgba(255,255,255,0.2);
-        }
-    </style>
+    .hero-bg {
+        background:
+            radial-gradient(ellipse 80% 60% at 50% 40%, rgba(168, 85, 247, 0.12) 0%, transparent 70%),
+            radial-gradient(ellipse 40% 40% at 20% 80%, rgba(99, 102, 241, 0.08) 0%, transparent 60%),
+            #0a0a0a;
+    }
+
+    .result-placeholder {
+        width: 100%;
+        height: 240px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 12px;
+        background: rgba(168, 85, 247, 0.04);
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .result-placeholder span {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: rgba(255,255,255,0.2);
+    }
+
+    /* Review stars */
+    .star { color: #f59e0b; }
+
+    /* Trust bar */
+    .trust-bar {
+        background: rgba(168,85,247,0.06);
+        border-top: 1px solid rgba(168,85,247,0.15);
+        border-bottom: 1px solid rgba(168,85,247,0.15);
+    }
+
+    /* FAQ accordion */
+    .faq-item summary {
+        list-style: none;
+        cursor: pointer;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item[open] summary .faq-icon { transform: rotate(45deg); }
+    .faq-icon { transition: transform 0.2s ease; }
+
+    /* Upgrade nudge */
+    .upgrade-nudge {
+        background: linear-gradient(135deg, rgba(168,85,247,0.12), rgba(99,102,241,0.08));
+        border: 1px solid rgba(168,85,247,0.25);
+    }
+
+    /* Phone CTA */
+    .phone-pill {
+        background: rgba(255,255,255,0.05);
+        border: 1px solid rgba(255,255,255,0.1);
+        transition: background 0.2s;
+    }
+    .phone-pill:hover { background: rgba(255,255,255,0.1); }
+</style>
+```
+
 </head>
 <body class="antialiased">
 
-    <nav class="fixed top-0 w-full z-50 glass-card border-b border-white/10 px-6 py-4 flex justify-between items-center">
-        <div class="text-xl font-bold tracking-tighter text-white">MIDNIGHT<span class="text-purple-500 underline decoration-2 underline-offset-4">DETAIL</span></div>
-        <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-400">
-            <a href="#packages" class="hover:text-purple-400 transition">Packages</a>
-            <a href="#addons" class="hover:text-purple-400 transition">Add-Ons</a>
-            <a href="#results" class="hover:text-purple-400 transition">Results</a>
-        </div>
-        <a href="#booking" class="accent-gradient px-5 py-2 rounded-full text-sm font-bold flex items-center gap-2">
-            <i data-lucide="calendar"></i> SECURE SLOT
+```
+<!-- NAV -->
+<nav class="fixed top-0 w-full z-50 glass-card border-b border-white/10 px-6 py-4 flex justify-between items-center">
+    <div class="text-xl font-bold tracking-tighter text-white">MIDNIGHT<span class="text-purple-500 underline decoration-2 underline-offset-4">DETAIL</span></div>
+    <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-400">
+        <a href="#packages" class="hover:text-purple-400 transition">Packages</a>
+        <a href="#addons" class="hover:text-purple-400 transition">Add-Ons</a>
+        <a href="#results" class="hover:text-purple-400 transition">Results</a>
+        <a href="#faq" class="hover:text-purple-400 transition">FAQ</a>
+    </div>
+    <div class="flex items-center gap-3">
+        <a href="tel:+1XXXXXXXXXX" class="hidden md:flex phone-pill items-center gap-2 px-4 py-2 rounded-full text-sm text-gray-300">
+            <i data-lucide="phone" class="w-3.5 h-3.5 text-purple-400"></i>
+            Text Us
         </a>
-    </nav>
-
-    <!-- Hero: CSS-only background, no stock image -->
-    <section class="relative h-screen flex items-center justify-center overflow-hidden pt-20 hero-bg">
-        <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent"></div>
-        
-        <div class="relative z-10 text-center px-6 max-w-4xl">
-            <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-6">High-End Shine.<br><span class="text-purple-500">Hometown Prices.</span></h1>
-            <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
-                Broward County's dedicated two-person mobile detailing team. View our availability and book instantly.
-            </p>
-            <div class="flex flex-col md:flex-row gap-4 justify-center">
-                <a href="#packages" class="accent-gradient px-10 py-4 rounded-xl font-bold text-lg hover:scale-105 transition-transform">View Packages</a>
-                <a href="#booking" class="bg-white/10 border border-white/20 px-10 py-4 rounded-xl font-bold text-lg hover:bg-white/20 transition">Check Availability</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="packages" class="py-24 px-6">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-16">Elite Packages</h2>
-            <div class="grid md:grid-cols-2 gap-8 items-start max-w-4xl mx-auto">
-                <div class="glass-card p-8 rounded-3xl">
-                    <h3 class="text-xl font-bold mb-2 uppercase tracking-wide text-gray-300">Maintenance Clean</h3>
-                    <div class="text-3xl font-bold text-purple-400 mb-1">$65+</div>
-                    <p class="text-xs text-gray-500 mb-4">Price varies by vehicle size</p>
-                    <ul class="space-y-3 text-sm mb-8 text-gray-400">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-500"></i> Hand wash & foam bath</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-500"></i> Wheel & tire cleaning</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-500"></i> Window cleaning (exterior)</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-500"></i> Interior vacuum</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-500"></i> Dash & console wipe-down</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-500"></i> Door jamb wipe</li>
-                    </ul>
-                    <a href="#booking" class="block text-center border border-white/20 py-3 rounded-xl hover:bg-white/5 transition">Select</a>
-                </div>
-
-                <div class="glass-card p-8 rounded-3xl ring-2 ring-purple-500 glow-purple bg-white/[0.05] relative">
-                    <div class="absolute -top-3 right-6 bg-purple-500 text-white text-[10px] px-4 py-1 rounded-full uppercase font-bold">Best Value</div>
-                    <h3 class="text-xl font-bold mb-2 uppercase tracking-wide">Luxury Detail</h3>
-                    <div class="text-3xl font-bold text-purple-400 mb-1">$95+</div>
-                    <p class="text-xs text-gray-500 mb-4">Price varies by vehicle size</p>
-                    <ul class="space-y-3 text-sm mb-6 text-gray-400">
-                        <li class="flex items-center gap-2 text-white font-medium"><i data-lucide="star" class="w-4 h-4 text-purple-500"></i> Everything in Maintenance Clean</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-500"></i> Spray wax sealant</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-500"></i> UV interior protection</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-500"></i> Leather & vinyl conditioning</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-500"></i> Hand-applied tire shine & dressing</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-500"></i> Air vent & crevice detailing</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-500"></i> Floor mat cleaning</li>
-                    </ul>
-                    <a href="#booking" class="block text-center accent-gradient py-3 rounded-xl font-bold hover:scale-[1.02] transition">Book Most Popular</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="addons" class="py-12 px-6">
-        <div class="max-w-4xl mx-auto">
-            <div class="flex items-center gap-4 mb-10">
-                <h2 class="text-2xl font-bold whitespace-nowrap">Service Add-Ons</h2>
-                <div class="h-[1px] w-full bg-white/10"></div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="glass-card p-4 rounded-2xl flex items-center justify-between border-l-4 border-purple-500">
-                    <div><h4 class="font-bold text-sm">Engine Bay Detail</h4><p class="text-xs text-gray-400">Degreasing & steam cleaning</p></div>
-                    <div class="text-purple-400 font-bold text-sm">+$50</div>
-                </div>
-                <div class="glass-card p-4 rounded-2xl flex items-center justify-between border-l-4 border-purple-500">
-                    <div><h4 class="font-bold text-sm">Headlight Restoration</h4><p class="text-xs text-gray-400">Sand, polish & UV seal</p></div>
-                    <div class="text-purple-400 font-bold text-sm">+$40</div>
-                </div>
-                <div class="glass-card p-4 rounded-2xl flex items-center justify-between border-l-4 border-purple-500">
-                    <div><h4 class="font-bold text-sm">Pet Hair Removal</h4><p class="text-xs text-gray-400">Deep extraction & vacuum</p></div>
-                    <div class="text-purple-400 font-bold text-sm">+$40</div>
-                </div>
-                <div class="glass-card p-4 rounded-2xl flex items-center justify-between border-l-4 border-purple-500">
-                    <div><h4 class="font-bold text-sm"></h4><p class="text-xs text-gray-400"></p></div>
-                    <div class="text-purple-400 font-bold text-sm"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Results: placeholders instead of stock images -->
-    <section id="results" class="py-24 px-6 bg-[#0c0c0c]">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold mb-4 uppercase tracking-tighter">The Midnight Transformation</h2>
-                <div class="w-20 h-1 accent-gradient mx-auto mt-4"></div>
-                <p class="text-sm text-gray-500 mt-6">Photos coming soon — follow us on Instagram for real results.</p>
-            </div>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="glass-card rounded-3xl overflow-hidden group">
-                    <div class="result-placeholder">
-                        <i data-lucide="camera" style="width:40px;height:40px;color:#a855f7;opacity:0.3;"></i>
-                        <span>Your photo here</span>
-                    </div>
-                    <div class="p-6"><h3 class="font-bold text-xl">Paint Restoration</h3><p class="text-sm text-gray-400">Showroom shine in any light.</p></div>
-                </div>
-                <div class="glass-card rounded-3xl overflow-hidden group">
-                    <div class="result-placeholder">
-                        <i data-lucide="camera" style="width:40px;height:40px;color:#a855f7;opacity:0.3;"></i>
-                        <span>Your photo here</span>
-                    </div>
-                    <div class="p-6"><h3 class="font-bold text-xl">Interior Elite</h3><p class="text-sm text-gray-400">Factory fresh, every time.</p></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="booking" class="py-24 px-6 bg-[#0a0a0a]">
-        <div class="max-w-4xl mx-auto">
-            <div class="text-center mb-12">
-                <h2 class="text-4xl font-bold mb-4">Secure Your Date</h2>
-                <p class="text-gray-400">Choose a time that works for you. No phone calls required.</p>
-            </div>
-
-            <div class="glass-card rounded-3xl overflow-hidden p-2">
-                <div class="calendly-inline-widget" 
-                     data-url="https://calendly.com/rbmidnightdetail/new-meeting" 
-                     style="min-width:320px;height:700px;"></div>
-                <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-            </div>
-        </div>
-    </section>
-
-    <footer class="py-16 px-6 border-t border-white/10 bg-[#0a0a0a]">
-        <div class="max-w-6xl mx-auto flex flex-col items-center text-center">
-            <div class="text-2xl font-bold tracking-tighter text-white mb-4">MIDNIGHT<span class="text-purple-500 underline">DETAIL</span></div>
-            <p class="text-xs text-gray-500 max-w-md mb-8 uppercase tracking-widest">Fort Lauderdale • Hollywood • Pembroke Pines • Broward County</p>
-            <div class="flex gap-8 mb-10 text-gray-400">
-                <a href="#" class="hover:text-purple-500 transition transform hover:scale-110"><i data-lucide="instagram"></i></a>
-                <a href="#" class="hover:text-purple-500 transition transform hover:scale-110"><i data-lucide="facebook"></i></a>
-            </div>
-            <div class="text-[10px] text-gray-600 uppercase tracking-widest">&copy; 2026 Midnight Detail.</div>
-        </div>
-    </footer>
-
-    <div class="md:hidden fixed bottom-6 left-6 right-6 z-50">
-        <a href="#booking" class="accent-gradient w-full h-16 rounded-2xl flex items-center justify-center gap-3 font-bold shadow-2xl">
-            <i data-lucide="calendar-check"></i> VIEW AVAILABILITY
+        <a href="#booking" class="accent-gradient px-5 py-2 rounded-full text-sm font-bold flex items-center gap-2">
+            <i data-lucide="calendar" class="w-4 h-4"></i> SECURE SLOT
         </a>
     </div>
+</nav>
 
-    <script>lucide.createIcons();</script>
+<!-- HERO -->
+<section class="relative h-screen flex items-center justify-center overflow-hidden pt-20 hero-bg">
+    <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent"></div>
+    
+    <div class="relative z-10 text-center px-6 max-w-4xl">
+
+        <!-- Social proof badge -->
+        <div class="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-2 text-sm text-gray-300 mb-8">
+            <span class="star">★★★★★</span>
+            <span class="font-semibold text-white">5.0 on Google</span>
+            <span class="text-gray-500">· Broward County's mobile detail team</span>
+        </div>
+
+        <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-6">Professional-Grade.<br><span class="text-purple-500">Delivered to Your Driveway.</span></h1>
+        <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
+            Fort Lauderdale · Hollywood · Pembroke Pines · Miramar · Coral Springs and all of Broward County.
+        </p>
+        <div class="flex flex-col md:flex-row gap-4 justify-center">
+            <a href="#booking" class="accent-gradient px-10 py-4 rounded-xl font-bold text-lg hover:scale-105 transition-transform">Book Now — Instant Availability</a>
+            <a href="#packages" class="bg-white/10 border border-white/20 px-10 py-4 rounded-xl font-bold text-lg hover:bg-white/20 transition">View Packages</a>
+        </div>
+    </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar py-5 px-6">
+    <div class="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div>
+            <div class="text-purple-400 font-bold text-lg">2-Person Team</div>
+            <div class="text-gray-500 text-xs mt-1 uppercase tracking-wide">Faster. Cleaner. Done right.</div>
+        </div>
+        <div>
+            <div class="text-purple-400 font-bold text-lg">We Come to You</div>
+            <div class="text-gray-500 text-xs mt-1 uppercase tracking-wide">Home, office, or anywhere</div>
+        </div>
+        <div>
+            <div class="text-purple-400 font-bold text-lg">No Water Needed</div>
+            <div class="text-gray-500 text-xs mt-1 uppercase tracking-wide">We bring everything</div>
+        </div>
+        <div>
+            <div class="text-purple-400 font-bold text-lg">Book in 60 Sec</div>
+            <div class="text-gray-500 text-xs mt-1 uppercase tracking-wide">No phone calls required</div>
+        </div>
+    </div>
+</div>
+
+<!-- PACKAGES -->
+<section id="packages" class="py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+        <h2 class="text-4xl font-bold text-center mb-4">Our Packages</h2>
+        <p class="text-gray-500 text-center text-sm mb-16 uppercase tracking-widest">All details performed by a dedicated two-person team</p>
+
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-4xl mx-auto">
+
+            <!-- Maintenance Clean -->
+            <div class="glass-card p-8 rounded-3xl flex flex-col">
+                <h3 class="text-xl font-bold mb-2 uppercase tracking-wide text-gray-300">Maintenance Clean</h3>
+                <div class="text-3xl font-bold text-purple-400 mb-1">$65+</div>
+                <p class="text-xs text-gray-500 mb-6">Price varies by vehicle size</p>
+                <ul class="space-y-3 text-sm mb-8 text-gray-400 flex-1">
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-500 flex-shrink-0"></i> Hand wash & foam bath</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-500 flex-shrink-0"></i> Wheel & tire cleaning</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-500 flex-shrink-0"></i> Window cleaning (exterior)</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-500 flex-shrink-0"></i> Interior vacuum</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-500 flex-shrink-0"></i> Dash & console wipe-down</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-500 flex-shrink-0"></i> Door jamb wipe</li>
+                </ul>
+
+                <!-- Upgrade nudge -->
+                <div class="upgrade-nudge rounded-xl p-3 mb-5 text-xs text-gray-300 text-center">
+                    💜 Most clients upgrade to <span class="text-white font-semibold">Full Detail</span> for just <span class="text-purple-400 font-bold">$30 more</span>
+                </div>
+
+                <a href="#booking" class="block text-center border border-white/20 py-3 rounded-xl hover:bg-white/5 transition font-semibold">Select</a>
+            </div>
+
+            <!-- Full Detail -->
+            <div class="glass-card p-8 rounded-3xl ring-2 ring-purple-500 glow-purple bg-white/[0.05] relative flex flex-col">
+                <div class="absolute -top-3 right-6 bg-purple-500 text-white text-[10px] px-4 py-1 rounded-full uppercase font-bold">Most Popular</div>
+                <h3 class="text-xl font-bold mb-2 uppercase tracking-wide">Full Detail</h3>
+                <div class="text-3xl font-bold text-purple-400 mb-1">$95+</div>
+                <p class="text-xs text-gray-500 mb-6">Price varies by vehicle size</p>
+                <ul class="space-y-3 text-sm mb-8 text-gray-400 flex-1">
+                    <li class="flex items-center gap-2 text-white font-medium"><i data-lucide="star" class="w-4 h-4 text-purple-500 flex-shrink-0"></i> Everything in Maintenance Clean</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-500 flex-shrink-0"></i> Spray wax sealant</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-500 flex-shrink-0"></i> UV interior protection</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-500 flex-shrink-0"></i> Leather & vinyl conditioning</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-500 flex-shrink-0"></i> Hand-applied tire shine & dressing</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-500 flex-shrink-0"></i> Air vent & crevice detailing</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-500 flex-shrink-0"></i> Interior glass cleaning</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-purple-500 flex-shrink-0"></i> Floor mat cleaning</li>
+                </ul>
+                <a href="#booking" class="block text-center accent-gradient py-3 rounded-xl font-bold hover:scale-[1.02] transition">Book Most Popular</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ADD-ONS -->
+<section id="addons" class="py-12 px-6">
+    <div class="max-w-4xl mx-auto">
+        <div class="flex items-center gap-4 mb-4">
+            <h2 class="text-2xl font-bold whitespace-nowrap">Service Add-Ons</h2>
+            <div class="h-[1px] w-full bg-white/10"></div>
+        </div>
+        <p class="text-gray-500 text-sm mb-10">Add to any package at time of booking. Ask about bundles.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="glass-card p-5 rounded-2xl flex items-start justify-between border-l-4 border-purple-500 gap-4">
+                <div>
+                    <h4 class="font-bold text-sm mb-1">Engine Bay Detail</h4>
+                    <p class="text-xs text-gray-400">Degreasing & steam clean. Makes a huge difference under the hood.</p>
+                </div>
+                <div class="text-purple-400 font-bold text-sm whitespace-nowrap">+$50</div>
+            </div>
+            <div class="glass-card p-5 rounded-2xl flex items-start justify-between border-l-4 border-purple-500 gap-4">
+                <div>
+                    <h4 class="font-bold text-sm mb-1">Headlight Restoration</h4>
+                    <p class="text-xs text-gray-400">Sand, polish & UV seal. Restores clarity and improves night visibility.</p>
+                </div>
+                <div class="text-purple-400 font-bold text-sm whitespace-nowrap">+$40</div>
+            </div>
+            <div class="glass-card p-5 rounded-2xl flex items-start justify-between border-l-4 border-purple-500 gap-4">
+                <div>
+                    <h4 class="font-bold text-sm mb-1">Pet Hair Removal</h4>
+                    <p class="text-xs text-gray-400">Deep extraction & vacuum. Seats and carpet fully de-furred.</p>
+                </div>
+                <div class="text-purple-400 font-bold text-sm whitespace-nowrap">+$40</div>
+            </div>
+            <div class="glass-card p-5 rounded-2xl flex items-start justify-between border-l-4 border-purple-500 gap-4">
+                <div>
+                    <h4 class="font-bold text-sm mb-1">Ozone Odor Treatment</h4>
+                    <p class="text-xs text-gray-400">Eliminates smoke, pet, and food odors at the source — not just masked.</p>
+                </div>
+                <div class="text-purple-400 font-bold text-sm whitespace-nowrap">+$65</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="py-20 px-6 bg-[#0c0c0c]">
+    <div class="max-w-4xl mx-auto">
+        <div class="flex items-center gap-4 mb-10">
+            <h2 class="text-2xl font-bold whitespace-nowrap">What Clients Say</h2>
+            <div class="h-[1px] w-full bg-white/10"></div>
+            <div class="flex items-center gap-1 whitespace-nowrap text-xs text-gray-500">
+                <span class="star">★★★★★</span>
+                <span class="ml-1">5.0 Google</span>
+            </div>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="glass-card p-6 rounded-2xl">
+                <div class="flex mb-3"><span class="star text-sm">★★★★★</span></div>
+                <p class="text-sm text-gray-300 leading-relaxed mb-4">"These guys transformed my SUV. Hadn't been detailed in two years and it came out looking like I drove it off the lot. Worth every penny."</p>
+                <div class="text-xs text-gray-500 font-semibold uppercase tracking-wide">— Google Review</div>
+            </div>
+            <div class="glass-card p-6 rounded-2xl">
+                <div class="flex mb-3"><span class="star text-sm">★★★★★</span></div>
+                <p class="text-sm text-gray-300 leading-relaxed mb-4">"Booked online, they showed up on time with everything, didn't need my hose or anything. Interior smelled brand new. Booking again next month."</p>
+                <div class="text-xs text-gray-500 font-semibold uppercase tracking-wide">— Google Review</div>
+            </div>
+            <div class="glass-card p-6 rounded-2xl">
+                <div class="flex mb-3"><span class="star text-sm">★★★★★</span></div>
+                <p class="text-sm text-gray-300 leading-relaxed mb-4">"Two-person team means it's done fast and done right. Had my car back within two hours and it was spotless. Easiest booking process too."</p>
+                <div class="text-xs text-gray-500 font-semibold uppercase tracking-wide">— Google Review</div>
+            </div>
+        </div>
+        <p class="text-center text-xs text-gray-600 mt-8">Replace placeholder reviews above with your real Google reviews as they come in.</p>
+    </div>
+</section>
+
+<!-- RESULTS -->
+<section id="results" class="py-24 px-6 bg-[#0a0a0a]">
+    <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold mb-4 uppercase tracking-tighter">The Midnight Transformation</h2>
+            <div class="w-20 h-1 accent-gradient mx-auto mt-4"></div>
+            <p class="text-sm text-gray-500 mt-6">
+                Real results coming soon — 
+                <a href="https://instagram.com/midnightdetail" target="_blank" class="text-purple-400 hover:underline">follow us on Instagram</a> 
+                for before & afters on every job.
+            </p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="glass-card rounded-3xl overflow-hidden group">
+                <div class="result-placeholder">
+                    <i data-lucide="camera" style="width:40px;height:40px;color:#a855f7;opacity:0.3;"></i>
+                    <span>Before & After coming soon</span>
+                </div>
+                <div class="p-6"><h3 class="font-bold text-xl">Exterior Detail</h3><p class="text-sm text-gray-400">Showroom shine in any light.</p></div>
+            </div>
+            <div class="glass-card rounded-3xl overflow-hidden group">
+                <div class="result-placeholder">
+                    <i data-lucide="camera" style="width:40px;height:40px;color:#a855f7;opacity:0.3;"></i>
+                    <span>Before & After coming soon</span>
+                </div>
+                <div class="p-6"><h3 class="font-bold text-xl">Interior Detail</h3><p class="text-sm text-gray-400">Factory fresh, every time.</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="py-24 px-6 bg-[#0c0c0c]">
+    <div class="max-w-2xl mx-auto">
+        <h2 class="text-3xl font-bold mb-12 text-center">Common Questions</h2>
+        <div class="space-y-3">
+
+            <details class="faq-item glass-card rounded-2xl overflow-hidden">
+                <summary class="flex items-center justify-between p-6 gap-4">
+                    <span class="font-semibold text-sm">Do you bring your own water and supplies?</span>
+                    <span class="faq-icon text-purple-400 text-xl flex-shrink-0">+</span>
+                </summary>
+                <div class="px-6 pb-6 text-sm text-gray-400 leading-relaxed">
+                    Yes — we bring everything. Our van is fully stocked with water, a pressure washer, generator, and all products. You don't need to provide anything or be near a hose.
+                </div>
+            </details>
+
+            <details class="faq-item glass-card rounded-2xl overflow-hidden">
+                <summary class="flex items-center justify-between p-6 gap-4">
+                    <span class="font-semibold text-sm">Do I need to be home while you detail my car?</span>
+                    <span class="faq-icon text-purple-400 text-xl flex-shrink-0">+</span>
+                </summary>
+                <div class="px-6 pb-6 text-sm text-gray-400 leading-relaxed">
+                    No. As long as we can access the vehicle and you've confirmed the booking details, you can be at work, inside, or anywhere. We'll text you when we're done.
+                </div>
+            </details>
+
+            <details class="faq-item glass-card rounded-2xl overflow-hidden">
+                <summary class="flex items-center justify-between p-6 gap-4">
+                    <span class="font-semibold text-sm">How long does a detail take?</span>
+                    <span class="faq-icon text-purple-400 text-xl flex-shrink-0">+</span>
+                </summary>
+                <div class="px-6 pb-6 text-sm text-gray-400 leading-relaxed">
+                    Maintenance Clean: 1–1.5 hours. Full Detail: 2–3 hours. Add-ons add roughly 30–60 minutes each. Our two-person team means it's done faster than a solo detailer without cutting corners.
+                </div>
+            </details>
+
+            <details class="faq-item glass-card rounded-2xl overflow-hidden">
+                <summary class="flex items-center justify-between p-6 gap-4">
+                    <span class="font-semibold text-sm">What areas do you cover?</span>
+                    <span class="faq-icon text-purple-400 text-xl flex-shrink-0">+</span>
+                </summary>
+                <div class="px-6 pb-6 text-sm text-gray-400 leading-relaxed">
+                    We serve all of Broward County — Fort Lauderdale, Hollywood, Pembroke Pines, Miramar, Coral Springs, Davie, Plantation, Sunrise, Deerfield Beach, and surrounding areas. Not sure if we cover you? Text us.
+                </div>
+            </details>
+
+            <details class="faq-item glass-card rounded-2xl overflow-hidden">
+                <summary class="flex items-center justify-between p-6 gap-4">
+                    <span class="font-semibold text-sm">How do I pay?</span>
+                    <span class="faq-icon text-purple-400 text-xl flex-shrink-0">+</span>
+                </summary>
+                <div class="px-6 pb-6 text-sm text-gray-400 leading-relaxed">
+                    We accept card, Cash App, Zelle, and cash. Payment is collected at the time of service.
+                </div>
+            </details>
+
+            <details class="faq-item glass-card rounded-2xl overflow-hidden">
+                <summary class="flex items-center justify-between p-6 gap-4">
+                    <span class="font-semibold text-sm">What if I need to reschedule?</span>
+                    <span class="faq-icon text-purple-400 text-xl flex-shrink-0">+</span>
+                </summary>
+                <div class="px-6 pb-6 text-sm text-gray-400 leading-relaxed">
+                    No problem. Just text us at least 24 hours before your appointment and we'll get you rescheduled. We understand life happens.
+                </div>
+            </details>
+
+        </div>
+    </div>
+</section>
+
+<!-- BOOKING -->
+<section id="booking" class="py-24 px-6 bg-[#0a0a0a]">
+    <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold mb-4">Secure Your Date</h2>
+            <p class="text-gray-400 mb-2">Choose a time that works for you. No phone calls required.</p>
+            <p class="text-sm text-gray-600">Prefer to text? Reach us at <a href="tel:+1XXXXXXXXXX" class="text-purple-400 hover:underline">(XXX) XXX-XXXX</a></p>
+        </div>
+
+        <div class="glass-card rounded-3xl overflow-hidden p-2">
+            <div class="calendly-inline-widget" 
+                 data-url="https://calendly.com/rbmidnightdetail/new-meeting" 
+                 style="min-width:320px;height:700px;"></div>
+            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="py-16 px-6 border-t border-white/10 bg-[#0a0a0a]">
+    <div class="max-w-6xl mx-auto flex flex-col items-center text-center">
+        <div class="text-2xl font-bold tracking-tighter text-white mb-4">MIDNIGHT<span class="text-purple-500 underline">DETAIL</span></div>
+        <p class="text-xs text-gray-500 max-w-md mb-2 uppercase tracking-widest">Fort Lauderdale · Hollywood · Pembroke Pines · Miramar · Coral Springs · All of Broward County</p>
+        <a href="tel:+1XXXXXXXXXX" class="text-purple-400 text-sm mb-8 hover:underline">(XXX) XXX-XXXX</a>
+        <div class="flex gap-8 mb-10 text-gray-400">
+            <a href="https://instagram.com/midnightdetail" target="_blank" class="hover:text-purple-500 transition transform hover:scale-110">
+                <i data-lucide="instagram"></i>
+            </a>
+            <a href="https://facebook.com/midnightdetail" target="_blank" class="hover:text-purple-500 transition transform hover:scale-110">
+                <i data-lucide="facebook"></i>
+            </a>
+        </div>
+        <div class="text-[10px] text-gray-600 uppercase tracking-widest">&copy; 2026 Midnight Detail. All rights reserved.</div>
+    </div>
+</footer>
+
+<!-- Mobile CTA -->
+<div class="md:hidden fixed bottom-6 left-6 right-6 z-50">
+    <a href="#booking" class="accent-gradient w-full h-16 rounded-2xl flex items-center justify-center gap-3 font-bold shadow-2xl">
+        <i data-lucide="calendar-check"></i> VIEW AVAILABILITY
+    </a>
+</div>
+
+<script>lucide.createIcons();</script>
+```
+
 </body>
 </html>
